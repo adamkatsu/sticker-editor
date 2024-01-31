@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="wiodth=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Canvas Editor</title>
 </head>
 <body>
 
-    <div id="canvas-wrapper" class="w-screen h-screen flex flex-col">
-        <div id="topbar" class="bg-white flex justify-between py-4 px-6 border-b border-slate-300">
+    <div id="canvas-wrapper" class="w-screen h-screen flex flex-col bg-[#FAFAFA] ">
+        <div id="topbar" class="bg-white flex justify-between py-4 px-6 border-b border-neutral-200 text-sm">
             <div id="topbar-left" class="flex flex-row gap-4 items-center">
                 <div id="history" class="flex flex-row gap-4 items-center">
                     <img src="img/reverse-left.svg" alt="" class="h-6 w-6">
                     <img src="img/reverse-right.svg" alt="" class="h-6 w-6">
                 </div>
-                <div class="w-px h-full bg-slate-300"></div>
+                <div class="w-px h-full bg-neutral-200"></div>
                 <div class="flex flex-row gap-3 items-center">
                     <label for="canvas-size">Canvas Size: </label>
-                    <select name="canvas-size" id="canvas-size" class="w-36 bg-slate-100 border-slate-300 border p-2 rounded-lg">
+                    <select name="canvas-size" id="canvas-size" class="w-36 bg-neutral-100 border-neutral-200 border p-2 rounded-lg font-medium">
                         <option value="a5">A5</option>
                         <option value="a4">A4</option>
                         <option value="a3">A3</option>
                     </select>
                 </div>
-                <div class="w-px h-full bg-slate-300"></div>
-                <div class="flex flex-row gap-3 items-center">
+                <div class="w-px h-full bg-neutral-200"></div>
+                <div class="flex flex-row gap-3 items-center font-medium">
                     <div class="flex flex-row gap-[10px] items-center">
                         <label for="canvas-width">W</label>
-                        <input type="text" name="canvas-width" id="canvas-width" value="1234px" class="max-w-16 h-8 bg-slate-100 border-slate-300 border p-2 rounded-lg">
+                        <input type="number" name="canvas-width" id="canvas-width" value="1234" class="max-w-14 h-8 bg-neutral-100 border-neutral-200 border p-2 rounded-lg">
                     </div>
                     <button type="button" class="bg-transparent">
                         <img src="img/link-01.svg" alt="" class="w-4 h-4">
                     </button>
                     <div class="flex flex-row gap-[10px] items-center">
                         <label for="canvas-height">H</label>
-                        <input type="text" name="canvas-height" id="canvas-height" value="1234px" class="max-w-16 h-8 bg-slate-100 border-slate-300 border p-2 rounded-lg">
+                        <input type="number" name="canvas-height" id="canvas-height" value="1234" class="max-w-14 h-8 bg-neutral-100 border-neutral-200 border p-2 rounded-lg">
                     </div>
                     
                 </div>
@@ -44,65 +47,65 @@
                 <div class="canvas-scale">
                     <div class="flex flex-row gap-[10px] items-center">
                         <label for="canvas-width">Scale:</label>
-                        <input type="text" name="canvas-width" id="canvas-width" value="100%" class="max-w-10 h-8 bg-transparent">
+                        <input type="text" name="canvas-width" id="canvas-width" value="100%" class="max-w-10 h-8 bg-transparent font-medium">
                     </div>
                 </div>
-                <div class="w-px h-full bg-slate-300"></div>
+                <div class="w-px h-full bg-neutral-200"></div>
                 <div class="flex flex-row gap-3 items-center">
-                    <span class="text-slate-500">Set Image</span>
-                    <button type="button" class="bg-gray-950 px-4 py-[10px] rounded-lg text-white">Set image</button>
-                    <button type="button" class="flex flex-row items-center px-4 h-full gap-2 border-slate-300 border p-2 rounded-lg">
+                    <span class="text-neutral-400 font-semibold">Set image</span>
+                    <button type="button" class="bg-gray-950 px-4 py-[10px] rounded-lg text-white font-semibold">Set image</button>
+                    <button type="button" class="flex flex-row items-center px-4 h-full gap-2 border-neutral-200 border p-2 rounded-lg font-semibold">
                         <img src="img/download-02.svg" alt="" class="h-5 w-5">
                         Download file
                     </button>
                 </div>
             </div>
         </div>
-        <div id="canvas-main" class="w-full h-full bg-gray-200 relative">
-            <div id="panel-left" class="flex flex-col w-56 rounded-lg border border-slate-300 bg-white absolute top-6 left-6">  
-                <nav class="flex flex-row gap-3 p-4 border-b border-slate-300">
-                    <a href="#"><span>Layers</span></a>
-                    <a href="#"><span>Source</span></a>
+        <div id="canvas-main" class="w-full h-full bg-[url('/img/background.svg')] bg-repeat relative">
+            <div id="panel-left" class="flex flex-col w-56 rounded-lg border border-neutral-200 bg-white absolute top-6 left-6 text-xs">  
+                <nav class="flex flex-row gap-3 p-4 border-b border-neutral-200 font-semibold">
+                    <button id="btn-layer" type="button" class="text-blue-600">Layers</button type="button">
+                    <button id="btn-source" type="button">Source</button type="button">
                 </nav>
                 <div id="panel-layer" class="flex flex-col">
-                    <div class="flex flex-row gap-2 items-center px-4 py-2">
-                        <div class="w-6 h-8 bg-slate-100 border border-slate-300 rounded-[4px]"></div>
+                    <div class="flex flex-row gap-2 items-center px-4 py-2 cursor-pointer">
+                        <div class="w-6 h-8 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
                         <span>Background</span>
                     </div>
-                    <div class="flex flex-row gap-2 items-center px-4 py-2">
-                        <div class="w-6 h-8 bg-gray-100 border border-slate-300 rounded-[4px]"></div>
+                    <div class="flex flex-row gap-2 items-center px-4 py-2 cursor-pointer">
+                        <div class="w-6 h-8 bg-gray-100 border border-neutral-200 rounded-[4px]"></div>
                         <span>Canvas</span>
                     </div>
                 </div>
                 <div id="panel-source" class="flex flex-col hidden">
                     <div class="flex flex-row gap-2 items-center px-4 py-2">
-                        <div class="w-6 h-8 bg-slate-100 border border-slate-300 rounded-[4px]"></div>
+                        <div class="w-6 h-8 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
                         <span>Background</span>
                     </div>
                     <div class="flex flex-row gap-2 items-center px-4 py-2">
-                        <div class="w-6 h-8 bg-gray-100 border border-slate-300 rounded-[4px]"></div>
+                        <div class="w-6 h-8 bg-gray-100 border border-neutral-200 rounded-[4px]"></div>
                         <span>Canvas</span>
                     </div>
                 </div>
             </div>
-            <div id="panel-right" class="flex flex-col w-80 rounded-lg border border-slate-300 bg-white absolute top-6 right-6">  
-                <div class="flex flex-row gap-3 p-4 border-b border-slate-300">
+            <div id="panel-right" class="flex flex-col w-80 rounded-lg border border-neutral-200 bg-white absolute top-6 right-6 text-xs">  
+                <div class="flex flex-row gap-3 p-4 border-b border-slate-300 font-semibold">
                     <span>Design</span>
                 </div>
-                <div id="panel-layer" class="flex flex-col">
-                    <div class="flex flex-col gap-[10px] items-start px-4 py-4 border-b border-neutral-300">
+                <div id="panel-transform" class="flex flex-col">
+                    <div class="flex flex-col gap-[10px] items-start px-4 py-4 border-b border-neutral-300 font-medium cursor-pointer">
                         <div class="flex flex-row gap-2 items-center">
                             <img src="img/play.svg" alt="" class="w-3 h-3">
                             <span>Alignment</span>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-[10px] items-start px-4 py-4 border-b border-neutral-300">
+                    <div class="flex flex-col gap-[10px] items-start px-4 py-4 border-b border-neutral-300 font-medium cursor-pointer">
                         <div class="flex flex-row gap-2 items-center">
                             <img src="img/play.svg" alt="" class="w-3 h-3">
                             <span>Transform</span>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-[10px] items-start px-4 py-4 border-b border-neutral-300">
+                    <div class="flex flex-col gap-[10px] items-start px-4 py-4 font-medium cursor-pointer">
                         <div class="flex flex-row gap-2 items-center">
                             <img src="img/play.svg" alt="" class="w-3 h-3">
                             <span>Color</span>
@@ -110,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <canvas id="myCanvas" width="420" height="594" class="absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 rounded-2xl drop-shadow-sm"></canvas>
+            <canvas id="myCanvas" width="420" height="594" class="drop-shadow-[0px_1px_4px_rgba(0,0,0,0.1)] absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 rounded-2xl"></canvas>
         </div>
         
     </div>
