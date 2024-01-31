@@ -8,16 +8,54 @@
 </head>
 <body>
 
-    <div id="canvas-wrapper" class="bg-gray-200">
-        <div id="topbar">
-            <div id="topbar-left">
-                <div id="history"></div>
-                <div class="canvas-size"></div>
-                <div class="canvas-dimension"></div>
+    <div id="canvas-wrapper" class="bg-gray-200 w-screen h-screen">
+        <div id="topbar" class="bg-white flex justify-between py-4 px-6 border-b border-slate-300">
+            <div id="topbar-left" class="flex flex-row gap-4 items-center">
+                <div id="history" class="flex flex-row gap-4 items-center">
+                    <img src="img/reverse-left.svg" alt="" class="h-6 w-6">
+                    <img src="img/reverse-right.svg" alt="" class="h-6 w-6">
+                </div>
+                <div class="w-px h-full bg-slate-300"></div>
+                <div class="flex flex-row gap-3 items-center">
+                    <label for="canvas-size">Canvas Size: </label>
+                    <select name="canvas-size" id="canvas-size" class="w-36 bg-slate-100 border-slate-300 border p-2 rounded-lg">
+                        <option value="a5">A5</option>
+                        <option value="a4">A4</option>
+                        <option value="a3">A3</option>
+                    </select>
+                </div>
+                <div class="w-px h-full bg-slate-300"></div>
+                <div class="flex flex-row gap-3 items-center">
+                    <div class="flex flex-row gap-[10px] items-center">
+                        <label for="canvas-width">W</label>
+                        <input type="text" name="canvas-width" id="canvas-width" value="1234px" class="max-w-16 h-8 bg-slate-100 border-slate-300 border p-2 rounded-lg">
+                    </div>
+                    <button type="button" class="bg-transparent">
+                        <img src="img/link-01.svg" alt="" class="w-4 h-4">
+                    </button>
+                    <div class="flex flex-row gap-[10px] items-center">
+                        <label for="canvas-height">H</label>
+                        <input type="text" name="canvas-height" id="canvas-height" value="1234px" class="max-w-16 h-8 bg-slate-100 border-slate-300 border p-2 rounded-lg">
+                    </div>
+                    
+                </div>
             </div>
-            <div id="topbar-right">
-                <div class="canvas-scale"></div>
-                <div class="canvas-action"></div>
+            <div id="topbar-right" class="flex flex-row gap-4 items-center">
+                <div class="canvas-scale">
+                    <div class="flex flex-row gap-[10px] items-center">
+                        <label for="canvas-width">Scale</label>
+                        <input type="text" name="canvas-width" id="canvas-width" value="100%" class="max-w-10 h-8 bg-transparent">
+                    </div>
+                </div>
+                <div class="w-px h-full bg-slate-300"></div>
+                <div class="flex flex-row gap-3 items-center">
+                    <span class="text-slate-300">Set Image</span>
+                    <button type="button" class="bg-gray-950 px-4 py-[10px] rounded-lg text-white">Set Image</button>
+                    <button type="button" class="flex flex-row items-center px-4 h-full gap-2 border-slate-300 border p-2 rounded-lg"">
+                        <img src="img/download-02.svg" alt="" class="h-5 w-5">
+                        Download file
+                    </button>
+                </div>
             </div>
         </div>
         <div id="panel-layer">  
