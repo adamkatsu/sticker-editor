@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wiodth=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Canvas Editor</title>
+</head>
+<body>
+
+    <div id="canvas-wrapper" class="bg-gray-200">
+        <div id="topbar">
+            <div id="topbar-left">
+                <div id="history"></div>
+                <div class="canvas-size"></div>
+                <div class="canvas-dimension"></div>
+            </div>
+            <div id="topbar-right">
+                <div class="canvas-scale"></div>
+                <div class="canvas-action"></div>
+            </div>
+        </div>
+        <div id="panel-layer">  
+            <nav>
+                <a href="#"><span>Layer</span></a>
+                <a href="#"><span>Source</span></a>
+            </nav>
+            <div class="layer-list">
+                <div class="layer-item">
+                    <img src="" alt="">
+                    <span>Background</span>
+                </div>
+                <div class="layer-item">
+                    <img src="" alt="">
+                    <span>Canvas</span>
+                </div>
+            </div>
+        </div>
+        <div id="panel-design">
+            <div class="panel-title">
+                <span>Design</span>
+            </div>
+            <div class="design-wrapper">
+                <div class="design-title">
+                    <img src="" alt="">
+                    <span>Alignment</span>
+                </div>
+                <div class="design-main"></div>
+            </div>
+            <div class="design-wrapper">
+                <div class="design-title">
+                    <img src="" alt="">
+                    <span>Transform</span>
+                </div>
+                <div class="design-main"></div>
+            </div>
+            <div class="design-wrapper">
+                <div class="design-title">
+                    <img src="" alt="">
+                    <span>Color</span>
+                </div>
+                <div class="design-main"></div>
+            </div>
+        </div>
+        <canvas id="canvas-main"></canvas>
+    </div>
+    
+</body>
+</html>
