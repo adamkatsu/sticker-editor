@@ -43,38 +43,48 @@
             <div id="topbar-right" class="flex flex-row gap-4 items-center">
                 <div class="canvas-scale">
                     <div class="flex flex-row gap-[10px] items-center">
-                        <label for="canvas-width">Scale</label>
+                        <label for="canvas-width">Scale:</label>
                         <input type="text" name="canvas-width" id="canvas-width" value="100%" class="max-w-10 h-8 bg-transparent">
                     </div>
                 </div>
                 <div class="w-px h-full bg-slate-300"></div>
                 <div class="flex flex-row gap-3 items-center">
-                    <span class="text-slate-300">Set Image</span>
-                    <button type="button" class="bg-gray-950 px-4 py-[10px] rounded-lg text-white">Set Image</button>
-                    <button type="button" class="flex flex-row items-center px-4 h-full gap-2 border-slate-300 border p-2 rounded-lg"">
+                    <span class="text-slate-500">Set Image</span>
+                    <button type="button" class="bg-gray-950 px-4 py-[10px] rounded-lg text-white">Set image</button>
+                    <button type="button" class="flex flex-row items-center px-4 h-full gap-2 border-slate-300 border p-2 rounded-lg">
                         <img src="img/download-02.svg" alt="" class="h-5 w-5">
                         Download file
                     </button>
                 </div>
             </div>
         </div>
-        <div id="panel-layer">  
-            <nav>
-                <a href="#"><span>Layer</span></a>
+        <div class="flex flex-col w-56 rounded-lg border border-slate-300 bg-white m-6">  
+            <nav class="flex flex-row gap-3 p-4 border-b border-slate-300">
+                <a href="#"><span>Layers</span></a>
                 <a href="#"><span>Source</span></a>
             </nav>
-            <div class="layer-list">
-                <div class="layer-item">
-                    <img src="" alt="">
+            <div id="panel-layer" class="flex flex-col">
+                <div class="flex flex-row gap-2 items-center px-4 py-2">
+                    <div class="w-6 h-8 bg-slate-100 border border-slate-300 rounded-[4px]"></div>
                     <span>Background</span>
                 </div>
-                <div class="layer-item">
-                    <img src="" alt="">
+                <div class="flex flex-row gap-2 items-center px-4 py-2">
+                    <div class="w-6 h-8 bg-gray-100 border border-slate-300 rounded-[4px]"></div>
+                    <span>Canvas</span>
+                </div>
+            </div>
+            <div id="panel-source" class="flex flex-col hidden">
+                <div class="flex flex-row gap-2 items-center px-4 py-2">
+                    <div class="w-6 h-8 bg-slate-100 border border-slate-300 rounded-[4px]"></div>
+                    <span>Background</span>
+                </div>
+                <div class="flex flex-row gap-2 items-center px-4 py-2">
+                    <div class="w-6 h-8 bg-gray-100 border border-slate-300 rounded-[4px]"></div>
                     <span>Canvas</span>
                 </div>
             </div>
         </div>
-        <div id="panel-design">
+        <!-- <div id="panel-design">
             <div class="panel-title">
                 <span>Design</span>
             </div>
@@ -100,7 +110,7 @@
                 <div class="design-main"></div>
             </div>
         </div>
-        <canvas id="canvas-main"></canvas>
+        <canvas id="canvas-main"></canvas> -->
     </div>
     
 </body>
