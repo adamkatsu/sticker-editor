@@ -16,4 +16,17 @@
     input[type=number] {
       -moz-appearance: textfield;
     }
+    .panel-inner-hide {
+      height: 0px;
+      margin-top: -10px;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+    .arrow-rotate {
+      transform: rotate(90deg);
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
 }
