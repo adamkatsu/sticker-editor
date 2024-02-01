@@ -890,6 +890,14 @@ input[type=number] {
   padding-bottom: 10px;
 }
 
+.pt-0 {
+  padding-top: 0px;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;

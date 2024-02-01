@@ -49,8 +49,8 @@ const displayHeight = document.getElementById('canvas-height');
 canvasSize.addEventListener('change', () => {
     let selectedOption = canvasSize.options[canvasSize.selectedIndex];
 
-    displayWidth.value = `${selectedOption.getAttribute('data-width')}mm`;
-    displayHeight.value = `${selectedOption.getAttribute('data-height')}mm`;
+    displayWidth.value = selectedOption.getAttribute('data-width');
+    displayHeight.value = selectedOption.getAttribute('data-height');
 
     document.getElementById('myCanvas').width = selectedOption.getAttribute('data-width');
     document.getElementById('myCanvas').height = selectedOption.getAttribute('data-height');
