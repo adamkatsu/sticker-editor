@@ -21,24 +21,24 @@
                 <div class="w-px h-full bg-neutral-200"></div>
                 <div class="flex flex-row gap-3 items-center">
                     <label for="canvas-size">Canvas Size: </label>
-                    <select name="canvas-size" id="canvas-size" class="w-36 bg-neutral-100 border-neutral-200 border p-2 rounded-lg font-medium">
-                        <option value="a5" data-width="210" data-height="148" selected>A5</option>
-                        <option value="a4" data-width="297" data-height="210">A4</option>
-                        <option value="a3" data-width="420" data-height="297">A3</option>
+                    <select name="canvas-size" id="canvas-size" class="w-36 bg-neutral-100 border-neutral-200 border p-2 rounded-lg font-medium cursor-pointer">
+                        <option value="a5" data-width="148" data-height="210">A5</option>
+                        <option value="a4" data-width="210" data-height="297">A4</option>
+                        <option value="a3" data-width="297" data-height="420" selected>A3</option>
                     </select>
                 </div>
                 <div class="w-px h-full bg-neutral-200"></div>
                 <div class="flex flex-row gap-3 items-center font-medium">
                     <div class="flex flex-row gap-[10px] items-center">
                         <label for="canvas-width">W</label>
-                        <input type="number" name="canvas-width" id="canvas-width" value="1234" class="max-w-14 h-8 bg-neutral-100 border-neutral-200 border p-2 rounded-lg">
+                        <input type="text" name="canvas-width" id="canvas-width" value="297mm" class="w-[68px] h-8 bg-neutral-100 border-neutral-200 border p-2 rounded-lg">
                     </div>
                     <button type="button" class="bg-transparent">
                         <img src="img/link-01.svg" alt="" class="w-4 h-4">
                     </button>
                     <div class="flex flex-row gap-[10px] items-center">
                         <label for="canvas-height">H</label>
-                        <input type="number" name="canvas-height" id="canvas-height" value="1234" class="max-w-14 h-8 bg-neutral-100 border-neutral-200 border p-2 rounded-lg">
+                        <input type="text" name="canvas-height" id="canvas-height" value="420mm" class="w-[68px] h-8 bg-neutral-100 border-neutral-200 border p-2 rounded-lg">
                     </div>
                     
                 </div>
@@ -47,7 +47,7 @@
                 <div class="canvas-scale">
                     <div class="flex flex-row gap-[10px] items-center">
                         <label for="canvas-width">Scale:</label>
-                        <input type="text" name="canvas-width" id="canvas-width" value="100%" class="max-w-10 h-8 bg-transparent font-medium">
+                        <input type="text" name="canvas-width" id="canvas-width" value="20%" class="max-w-10 h-8 bg-transparent font-medium">
                     </div>
                 </div>
                 <div class="w-px h-full bg-neutral-200"></div>
@@ -117,23 +117,23 @@
                     </div>
                 </div>
             </div>
-            <canvas id="myCanvas" width="420" height="594" class="drop-shadow-[0px_1px_4px_rgba(0,0,0,0.1)] absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 rounded-2xl"></canvas>
+            <canvas id="myCanvas" width="297" height="420" class="drop-shadow-[0px_1px_4px_rgba(0,0,0,0.1)] absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 rounded-2xl"></canvas>
         </div>
         
     </div>
     
 
     <script>
-
         // Canvas Background
         const c = document.getElementById("myCanvas");
         const ctx = c.getContext("2d");
 
-        ctx.rect(0, 0, 420, 594);
+        ctx.rect(0, 0, c.width, c.height);
         ctx.fillStyle = "white";
         ctx.fill();
 
     </script>
+    <script src="canvas.js"></script>
     <script src="js/interaction.js"></script>
 </body>
 </html>
