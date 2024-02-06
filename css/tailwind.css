@@ -17,14 +17,14 @@
       -moz-appearance: textfield;
     }
     .arrow-rotate {
-      transform: rotate(90deg);
+      transform: rotate(-90deg);
       transition-property: all;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       transition-duration: 150ms;
     }
     .panel-inner-hide {
       height: 0px;
-      margin-top: -10px;
+      margin-top: -16px;
       transition-property: all;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       transition-duration: 150ms;
