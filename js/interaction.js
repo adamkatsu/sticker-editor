@@ -63,7 +63,7 @@ canvasSize.addEventListener('change', () => {
     document.getElementById('myCanvas').width = selectedOption.getAttribute('data-width');
     document.getElementById('myCanvas').height = selectedOption.getAttribute('data-height');
 
-    ctx.rect(0, 0, c.width, c.height);
+    ctx.rect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "white";
     ctx.fill();
 })
