@@ -16,6 +16,12 @@
     input[type=number] {
       -moz-appearance: textfield;
     }
+    .arrow-rotate {
+      transform: rotate(90deg);
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
     .panel-inner-hide {
       height: 0px;
       margin-top: -10px;
@@ -23,10 +29,12 @@
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       transition-duration: 150ms;
     }
-    .arrow-rotate {
-      transform: rotate(90deg);
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
     }
+    .hide-scrollbar::-webkit-scrollbar { 
+      display: none;  /* Safari and Chrome */
+    }
+    
 }

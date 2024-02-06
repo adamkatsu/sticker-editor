@@ -462,6 +462,13 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.arrow-rotate {
+  transform: rotate(90deg);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .panel-inner-hide {
   height: 0px;
   margin-top: -10px;
@@ -470,11 +477,16 @@ input[type=number] {
   transition-duration: 150ms;
 }
 
-.arrow-rotate {
-  transform: rotate(90deg);
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
 }
 
 *, ::before, ::after {
@@ -610,12 +622,20 @@ input[type=number] {
   margin-bottom: 1rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .flex {
   display: flex;
 }
 
 .hidden {
   display: none;
+}
+
+.h-14 {
+  height: 3.5rem;
 }
 
 .h-3 {
@@ -646,16 +666,12 @@ input[type=number] {
   height: 100vh;
 }
 
-.h-12 {
-  height: 3rem;
+.max-h-60 {
+  max-height: 15rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
-.h-60 {
-  height: 15rem;
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-3 {
@@ -686,6 +702,10 @@ input[type=number] {
   width: 20rem;
 }
 
+.w-\[68px\] {
+  width: 68px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -698,28 +718,8 @@ input[type=number] {
   width: 100vw;
 }
 
-.w-20 {
-  width: 5rem;
-}
-
-.w-\[72px\] {
-  width: 72px;
-}
-
-.w-\[68px\] {
-  width: 68px;
-}
-
 .max-w-10 {
   max-width: 2.5rem;
-}
-
-.max-w-14 {
-  max-width: 3.5rem;
-}
-
-.max-w-16 {
-  max-width: 4rem;
 }
 
 .-translate-x-2\/4 {
@@ -744,12 +744,20 @@ input[type=number] {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -778,6 +786,10 @@ input[type=number] {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .rounded-2xl {

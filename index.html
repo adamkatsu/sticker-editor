@@ -63,9 +63,10 @@
         </div>
         <div id="canvas-main" class="w-full h-full bg-[url('/img/background.svg')] bg-repeat relative">
             <div id="panel-left" class="flex flex-col w-56 rounded-lg border border-neutral-200 bg-white absolute top-6 left-6 text-xs">  
-                <nav class="flex flex-row gap-3 p-4 border-b border-neutral-200 font-semibold">
+                <nav class="flex flex-row w-full gap-3 p-4 border-b border-neutral-200 font-semibold">
                     <button id="btn-layer" type="button" class="text-blue-600">Layers</button type="button">
                     <button id="btn-source" type="button">Source</button type="button">
+                    <button id="btn-add-source" type="button" class="text-blue-600 ml-auto text-xs hidden">+</button>
                 </nav>
                 <div id="panel-layer" class="flex flex-col">
                     <div class="flex flex-row gap-2 items-center px-4 py-2 cursor-pointer">
@@ -77,10 +78,28 @@
                         <span>Canvas</span>
                     </div>
                 </div>
-                <div id="panel-source" class="flex flex-col hidden">
-                    <div class="flex flex-row gap-2 items-center justify-center px-4 py-2 h-60">
-                        <span>-- Under Construction --</span>
-                    </div>
+                <div id="panel-source" class="flex flex-row gap-2 flex-wrap items-start justify-start px-4 py-2 max-h-60 overflow-scroll hide-scrollbar hidden">
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+                        <div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>
+
                 </div>
             </div>
             <div id="panel-right" class="flex flex-col w-80 rounded-lg border border-neutral-200 bg-white absolute top-6 right-6 text-xs">  
@@ -90,7 +109,7 @@
                 <div id="panel-transform" class="flex flex-col">
                     <div class="flex flex-col gap-[10px] items-start px-4 py-4 pt-0 border-b border-neutral-300 font-medium cursor-pointer">
                         <div class="flex flex-row gap-2 items-center w-full pt-4">
-                            <img src="img/play.svg" alt="" class="w-3 h-3 transition-all">
+                            <img src="img/play.svg" alt="" class="w-3 h-3 transition-all arrow-rotate">
                             <span>Alignment</span>
                         </div>
                         <div class="flex flex-col items-center justify-center overflow-hidden transition-all panel-inner-hide">
@@ -99,7 +118,7 @@
                     </div>
                     <div class="flex flex-col gap-[10px] items-start px-4 py-4 pt-0 border-b border-neutral-300 font-medium cursor-pointer">
                         <div class="flex flex-row gap-2 items-center w-full pt-4">
-                            <img src="img/play.svg" alt="" class="w-3 h-3 transition-all">
+                            <img src="img/play.svg" alt="" class="w-3 h-3 transition-all arrow-rotate ">
                             <span>Transform</span>
                         </div>
                         <div class="flex flex-col items-center justify-center overflow-hidden transition-all panel-inner-hide">
@@ -108,7 +127,7 @@
                     </div>
                     <div class="flex flex-col gap-[10px] items-start px-4 py-4 pt-0 font-medium cursor-pointer">
                         <div class="flex flex-row gap-2 items-center w-full pt-4">
-                            <img src="img/play.svg" alt="" class="w-3 h-3 transition-all">
+                            <img src="img/play.svg" alt="" class="w-3 h-3 transition-all arrow-rotate">
                             <span>Color</span>
                         </div>
                         <div class="flex flex-col items-center justify-center overflow-hidden transition-all panel-inner-hide">

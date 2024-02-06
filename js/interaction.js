@@ -16,15 +16,20 @@ for (const child of panelTransform.children) {
 const panelLayer = document.getElementById('panel-layer');
 const btnLayer = document.getElementById('btn-layer');
 const panelSource = document.getElementById('panel-source');
-const btnSource = document.getElementById('btn-source')
+const btnSource = document.getElementById('btn-source');
+const btnAddSource = document.getElementById('btn-add-source');
+
 btnLayer.addEventListener('click', () => {
     panelLayer.classList.remove('hidden');
-    btnSource.classList.remove('text-blue-600')
+    btnSource.classList.remove('text-blue-600');
     if(panelSource.classList.contains('hidden') === false) {
         panelSource.classList.add('hidden');
     }
     if(btnLayer.classList.contains('text-blue-600') === false) {
-        btnLayer.classList.add('text-blue-600')
+        btnLayer.classList.add('text-blue-600');
+    }
+    if(btnAddSource.classList.contains('hidden') === false) {
+        btnAddSource.classList.add('hidden');
     }
 })       
 btnSource.addEventListener('click', () => {
@@ -35,6 +40,9 @@ btnSource.addEventListener('click', () => {
     }
     if(btnSource.classList.contains('text-blue-600') === false) {
         btnSource.classList.add('text-blue-600')
+    }
+    if(btnAddSource.classList.contains('hidden')) {
+        btnAddSource.classList.remove('hidden');
     }
 })
 
