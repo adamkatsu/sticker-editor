@@ -17,7 +17,6 @@ const panelLayer = document.getElementById('panel-layer');
 const btnLayer = document.getElementById('btn-layer');
 const panelSource = document.getElementById('panel-source');
 const btnSource = document.getElementById('btn-source');
-const btnAddSource = document.getElementById('btn-add-source');
 
 btnLayer.addEventListener('click', () => {
     panelLayer.classList.remove('hidden');
@@ -45,8 +44,41 @@ btnSource.addEventListener('click', () => {
         btnAddSource.classList.remove('hidden');
     }
 })
-btnAddSource.addEventListener('click', () => {
-    panelSource.innerHTML += `<div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>`
+
+
+// Image Gallery
+
+const btnAddSource = document.getElementById('btn-add-source');
+const inputImage = document.getElementById('input-image');
+
+let btnCount = 0;
+let sourceArr = [];
+let imagesArr = [];
+inputImage.addEventListener("change", () => {
+    const file = inputImage.files
+    console.log(inputImage.files)
+    imagesArr.push(file[0]);
+    inputImage.value = '';
+    displayImages()
+})
+function displayImages() {
+    let images = ""
+    imagesArr.forEach((image, index) => {
+      images += `<div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px] flex justify-center items-center"><img src="${URL.createObjectURL(image)}" alt="image" class="w-full h-full object-cover"></div>`;
+    //   sourceArr.push(URL.createObjectURL(image));
+    //   sessionStorage.setItem("gallery", sourceArr);
+    })
+    panelSource.innerHTML = '';
+    panelSource.innerHTML += images;
+    console.log(imagesArr);
+}
+btnAddSource.addEventListener('click', () => {      
+    // btnCount += 1;
+
+    // sourceArr.push(`new item = ${btnCount}`);
+    // sessionStorage.setItem("gallery", sourceArr);
+
+    // console.log(sourceArr);
 })
 
 
@@ -58,7 +90,7 @@ const displayWidth = document.getElementById('canvas-width');
 const displayHeight = document.getElementById('canvas-height');
 
 canvasSize.addEventListener('change', () => {
-    let selectedOption = canvasSize.options[canvasSize.selectedIndex];
+    let selectedOption = canvasSize.options[canvasSize.     selectedIndex];
 
     displayWidth.value = selectedOption.getAttribute('data-width');
     displayHeight.value = selectedOption.getAttribute('data-height');
