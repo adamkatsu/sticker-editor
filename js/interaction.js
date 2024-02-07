@@ -45,6 +45,9 @@ btnSource.addEventListener('click', () => {
         btnAddSource.classList.remove('hidden');
     }
 })
+btnAddSource.addEventListener('click', () => {
+    panelSource.innerHTML += `<div class="w-14 h-14 bg-neutral-100 border border-neutral-200 rounded-[4px]"></div>`
+})
 
 
 
